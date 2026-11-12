@@ -44,6 +44,67 @@ _data = {
 &"RESET": SubResource("Animation_ahnqt")
 }
 
+[sub_resource type="Animation" id="Animation_wjjip"]
+resource_name = "Finish"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(140, 803.99994), Vector2(140, 640)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1140, 804.00006), Vector2(1140, 640)]
+}
+
+[sub_resource type="Animation" id="Animation_poamd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(140, 640)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1140, 640)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_366lb"]
+_data = {
+&"Finish": SubResource("Animation_wjjip"),
+&"RESET": SubResource("Animation_poamd")
+}
+
 [node name="Timer Game" type="Node2D" unique_id=1277661856]
 script = ExtResource("1_wjjip")
 
@@ -72,14 +133,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Sprite2D" parent="Timer Game Canvas" unique_id=1559741579]
-visible = false
 clip_children = 2
 position = Vector2(640, 360)
 texture = ExtResource("4_5dkbs")
-
-[node name="Timer Cover" type="Sprite2D" parent="Timer Game Canvas/Timer" unique_id=332823897]
-position = Vector2(0, -181)
-texture = ExtResource("5_mdivu")
 
 [node name="Animation Timer" type="AnimationPlayer" parent="Timer Game Canvas/Timer" unique_id=1377770628]
 libraries/ = SubResource("AnimationLibrary_0xund")
@@ -104,5 +160,49 @@ text = "00 : 00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Timer Cover" type="Sprite2D" parent="Timer Game Canvas/Timer" unique_id=332823897]
+position = Vector2(0, -181)
+texture = ExtResource("5_mdivu")
+
 [node name="Timer Check" type="Timer" parent="Timer Game Canvas/Timer" unique_id=1312498024]
-wait_time = 0.009999999999999998
+wait_time = 0.00999999999999999
+
+[node name="Player1" type="Sprite2D" parent="Timer Game Canvas" unique_id=168489162]
+position = Vector2(140, 640)
+scale = Vector2(0.4848186, 0.4848186)
+texture = ExtResource("4_5dkbs")
+
+[node name="Player1 Text" type="RichTextLabel" parent="Timer Game Canvas/Player1" unique_id=411186054]
+offset_left = -191.82434
+offset_top = -70.129395
+offset_right = 189.76172
+offset_bottom = 72.19202
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("3_366lb")
+theme_override_font_sizes/normal_font_size = 72
+text = "00 : 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Player2" type="Sprite2D" parent="Timer Game Canvas" unique_id=1809279533]
+position = Vector2(1140, 640)
+scale = Vector2(0.48611104, 0.48611104)
+texture = ExtResource("4_5dkbs")
+
+[node name="Player2 Text" type="RichTextLabel" parent="Timer Game Canvas/Player2" unique_id=1074932219]
+offset_left = -191.31445
+offset_top = -69.94287
+offset_right = 190.27173
+offset_bottom = 72.37854
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("3_366lb")
+theme_override_font_sizes/normal_font_size = 72
+text = "00 : 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Finish Animation" type="AnimationPlayer" parent="Timer Game Canvas" unique_id=2133369204]
+libraries/ = SubResource("AnimationLibrary_366lb")
+
+[connection signal="timeout" from="Timer Game Canvas/Timer/Timer Check" to="." method="_on_timer_check_timeout"]
