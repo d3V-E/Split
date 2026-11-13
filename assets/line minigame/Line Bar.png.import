@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8vxleo4xyxbc"
-path="res://.godot/imported/Timer Cover.png-b07a967c56e648b0ef86c1b05430bfc0.ctex"
+uid="uid://i7qn6vbvhrqp"
+path="res://.godot/imported/Line Bar.png-6249cd7584120b21140475dcb5cf4ff5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Timer Cover.png"
-dest_files=["res://.godot/imported/Timer Cover.png-b07a967c56e648b0ef86c1b05430bfc0.ctex"]
+source_file="res://assets/line minigame/Line Bar.png"
+dest_files=["res://.godot/imported/Line Bar.png-6249cd7584120b21140475dcb5cf4ff5.ctex"]
 
 [params]
 

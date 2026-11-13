@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmnonp45lqlan"
-path="res://.godot/imported/Timer.png-1888357a3b61e07cc27ad84ad398ca31.ctex"
+uid="uid://d2dxk5wr6xf6j"
+path="res://.godot/imported/Sheet.png-0d211da678ce8086b8c005e434900283.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Timer.png"
-dest_files=["res://.godot/imported/Timer.png-1888357a3b61e07cc27ad84ad398ca31.ctex"]
+source_file="res://assets/quick minigame/Sheet.png"
+dest_files=["res://.godot/imported/Sheet.png-0d211da678ce8086b8c005e434900283.ctex"]
 
 [params]
 

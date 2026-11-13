@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://whxprs31hn8e"]
+
+[ext_resource type="Texture2D" uid="uid://ky8t730uvc8k" path="res://assets/Main Background.png" id="1_bknaw"]
+[ext_resource type="Script" uid="uid://c8amws3ytwhn3" path="res://scripts/line_click.gd" id="1_unkyb"]
+[ext_resource type="Texture2D" uid="uid://i7qn6vbvhrqp" path="res://assets/line minigame/Line Bar.png" id="3_2f7v6"]
+[ext_resource type="Texture2D" uid="uid://bek77n2pnm17o" path="res://assets/line minigame/Green Indicator.png" id="4_4t7t5"]
+[ext_resource type="Texture2D" uid="uid://csce8rqiwu6dy" path="res://assets/line minigame/Indicator.png" id="5_q0v2b"]
+[ext_resource type="FontFile" uid="uid://wxgmfu2y2ds6" path="res://assets/fonts/Geo-Regular.ttf" id="6_aihyl"]
+
+[node name="Line Click" type="Node2D" unique_id=974868571]
+script = ExtResource("1_unkyb")
+
+[node name="Line Canvas" type="CanvasLayer" parent="." unique_id=1045897679]
+
+[node name="Background" type="Sprite2D" parent="Line Canvas" unique_id=1590864336]
+position = Vector2(640, 360)
+texture = ExtResource("1_bknaw")
+
+[node name="Player 1" type="Sprite2D" parent="Line Canvas" unique_id=1833686622]
+position = Vector2(584, 200)
+scale = Vector2(2, 2)
+texture = ExtResource("3_2f7v6")
+
+[node name="GreenIndicator1" type="Sprite2D" parent="Line Canvas/Player 1" unique_id=1233311225]
+position = Vector2(-146, 0)
+texture = ExtResource("4_4t7t5")
+
+[node name="P1 Line" type="Sprite2D" parent="Line Canvas" unique_id=706509315]
+position = Vector2(212, 200)
+scale = Vector2(2, 2)
+texture = ExtResource("5_q0v2b")
+
+[node name="Player 2" type="Sprite2D" parent="Line Canvas" unique_id=330923993]
+position = Vector2(584, 540)
+scale = Vector2(2, 2)
+texture = ExtResource("3_2f7v6")
+
+[node name="GreenIndicator2" type="Sprite2D" parent="Line Canvas/Player 2" unique_id=1201848262]
+position = Vector2(-146, 0)
+texture = ExtResource("4_4t7t5")
+
+[node name="P2 Line" type="Sprite2D" parent="Line Canvas" unique_id=1705207801]
+position = Vector2(212, 540)
+scale = Vector2(2, 2)
+texture = ExtResource("5_q0v2b")
+
+[node name="P1 Score" type="RichTextLabel" parent="Line Canvas" unique_id=8788597]
+offset_left = 1054.0
+offset_top = 160.0
+offset_right = 1134.0
+offset_bottom = 240.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("6_aihyl")
+theme_override_font_sizes/normal_font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P2 Score" type="RichTextLabel" parent="Line Canvas" unique_id=1184344412]
+offset_left = 1054.0
+offset_top = 500.0
+offset_right = 1134.0
+offset_bottom = 580.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("6_aihyl")
+theme_override_font_sizes/normal_font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

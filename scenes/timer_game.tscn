@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dn6fb2akhqlor" path="res://scripts/timer_game.gd" id="1_wjjip"]
 [ext_resource type="Texture2D" uid="uid://ky8t730uvc8k" path="res://assets/Main Background.png" id="2_poamd"]
 [ext_resource type="FontFile" uid="uid://dhj36d4fxcvbv" path="res://assets/fonts/Quantico-Bold.ttf" id="3_366lb"]
-[ext_resource type="Texture2D" uid="uid://bmnonp45lqlan" path="res://assets/Timer.png" id="4_5dkbs"]
-[ext_resource type="Texture2D" uid="uid://c8vxleo4xyxbc" path="res://assets/Timer Cover.png" id="5_mdivu"]
+[ext_resource type="Texture2D" uid="uid://bmnonp45lqlan" path="res://assets/timer minigame/Timer.png" id="4_5dkbs"]
+[ext_resource type="Texture2D" uid="uid://c8vxleo4xyxbc" path="res://assets/timer minigame/Timer Cover.png" id="5_mdivu"]
 [ext_resource type="FontFile" uid="uid://wxgmfu2y2ds6" path="res://assets/fonts/Geo-Regular.ttf" id="6_1j868"]
 
 [sub_resource type="Animation" id="Animation_l30pv"]
