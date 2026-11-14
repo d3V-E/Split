@@ -1,13 +1,148 @@
 [gd_scene format=3 uid="uid://samqvfpe7gkk"]
 
-[ext_resource type="Script" uid="uid://bd1mgf0wcmymv" path="res://scripts/main_game.gd" id="1_s3esy"]
+[ext_resource type="Script" uid="uid://cdy740e5bmoa8" path="res://scripts/choosing.gd" id="1_wi4c7"]
 [ext_resource type="Texture2D" uid="uid://ky8t730uvc8k" path="res://assets/Main Background.png" id="2_72e8q"]
+[ext_resource type="Texture2D" uid="uid://b0m30q2pfsfoa" path="res://assets/Info.png" id="3_d2op2"]
+[ext_resource type="FontFile" uid="uid://dhj36d4fxcvbv" path="res://assets/fonts/Quantico-Bold.ttf" id="3_ipu61"]
+[ext_resource type="Texture2D" uid="uid://cimyqu4u3cutw" path="res://assets/S Key.png" id="4_ygxny"]
+[ext_resource type="Texture2D" uid="uid://bmdq2gr8hbaaj" path="res://assets/K Key.png" id="5_wi4c7"]
+[ext_resource type="Texture2D" uid="uid://deuiaywymgebl" path="res://assets/Place Holder.png" id="6_ygxny"]
+[ext_resource type="Texture2D" uid="uid://b4ysntwnmocwh" path="res://assets/2.png" id="8_70vka"]
+
+[sub_resource type="Animation" id="Animation_70vka"]
+resource_name = "Key"
+length = 0.25
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SKey:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(427, 664), Vector2(427, 666)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KKey:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1083.0001, 664.00006), Vector2(1083, 666)]
+}
+
+[sub_resource type="Animation" id="Animation_2l77h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SKey:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(387.00003, 664)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KKey:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1083.0001, 664.00006)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nqdth"]
+_data = {
+&"Key": SubResource("Animation_70vka"),
+&"RESET": SubResource("Animation_2l77h")
+}
 
 [node name="Main game" type="Node2D" unique_id=580549545]
-script = ExtResource("1_s3esy")
+script = ExtResource("1_wi4c7")
 
 [node name="Main Game Canvas" type="CanvasLayer" parent="." unique_id=2090152396]
 
 [node name="Main Game Background" type="Sprite2D" parent="Main Game Canvas" unique_id=1022797742]
 position = Vector2(640, 360)
 texture = ExtResource("2_72e8q")
+
+[node name="Info" type="Sprite2D" parent="Main Game Canvas" unique_id=728563930]
+position = Vector2(639.99994, 640.5)
+scale = Vector2(1.9999999, 1.59)
+texture = ExtResource("3_d2op2")
+
+[node name="Player 1 header" type="RichTextLabel" parent="Main Game Canvas/Info" unique_id=271243627]
+offset_left = -315.5
+offset_top = -14.779881
+offset_right = -189.99998
+offset_bottom = 44.716972
+theme_override_fonts/normal_font = ExtResource("3_ipu61")
+theme_override_font_sizes/normal_font_size = 26
+text = "PLAYER 1"
+vertical_alignment = 1
+
+[node name="Player 2 header" type="RichTextLabel" parent="Main Game Canvas/Info" unique_id=1859797370]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -326.75
+offset_top = -114.52832
+offset_right = -201.25
+offset_bottom = -55.031464
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_ipu61")
+theme_override_font_sizes/normal_font_size = 26
+text = "PLAYER 2"
+vertical_alignment = 1
+
+[node name="SKey" type="Sprite2D" parent="Main Game Canvas" unique_id=1607584255]
+position = Vector2(387.00003, 664)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_ygxny")
+
+[node name="KKey" type="Sprite2D" parent="Main Game Canvas" unique_id=678314602]
+position = Vector2(1083.0001, 664.00006)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("5_wi4c7")
+
+[node name="Animation" type="AnimationPlayer" parent="Main Game Canvas" unique_id=968454583]
+libraries/ = SubResource("AnimationLibrary_nqdth")
+autoplay = &"Key"
+
+[node name="Game 1" type="TextureButton" parent="Main Game Canvas" unique_id=1080744371]
+offset_left = 54.0
+offset_top = 54.0
+offset_right = 234.0
+offset_bottom = 234.0
+texture_normal = ExtResource("6_ygxny")
+stretch_mode = 0
+
+[node name="Instructions" type="TextureButton" parent="Main Game Canvas" unique_id=521959474]
+offset_left = 1044.0
+offset_top = 478.0
+offset_right = 1269.0
+offset_bottom = 553.0
+texture_normal = ExtResource("8_70vka")
+stretch_mode = 0
+
+[connection signal="button_down" from="Main Game Canvas/Game 1" to="." method="_on_game_1_button_down"]
+[connection signal="button_up" from="Main Game Canvas/Game 1" to="." method="_on_game_1_button_up"]
+[connection signal="button_down" from="Main Game Canvas/Instructions" to="." method="_on_instructions_button_down"]
+[connection signal="button_up" from="Main Game Canvas/Instructions" to="." method="_on_instructions_button_up"]

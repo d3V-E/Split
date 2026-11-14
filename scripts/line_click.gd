@@ -17,11 +17,11 @@ var player2 = 0
 var speed = 300
 var d1 = 1
 var d2 = 2
-var width = 400
+var width = 200
 
 func _ready():
-	$"Line Canvas/P1 Score".text = player1
-	$"Line Canvas/P2 Score".text = player2
+	$"Line Canvas/P1 Score".text = str(player1)
+	$"Line Canvas/P2 Score".text = str(player2)
 	resetm1m2()
 
 
@@ -38,26 +38,28 @@ func _process(delta: float):
 	elif needle2.position.x <= bar2.position.x - width:
 		d2 = 1
 
-func _unhandled_input(event: InputEvent):
+func _input(event: InputEvent):
 	var green1min = bar1.position.x + gr1.position.x - (gr1.scale.x * 50)
 	var green1max = bar1.position.x + gr1.position.x + (gr1.scale.x * 50)
-	if event.is_action("Player 1"):
+	if event.is_action_pressed("Player 1"):
 		if needle1.position.x >= green1min and needle1.position.x <= green1max:
 			var tween = get_tree().create_tween()
 			tween.tween_property(gr1 , "scale" , Vector2(1.1 , 1.1), .1)
 			player1 += 1
-			$"Line Canvas/P2 Score".text = player1
+			$"Line Canvas/P1 Score".text = str(player1)
 			tween.tween_property(gr1 , "scale" , Vector2(1 , 1), .1)
+			resetmark1()
 	
 	var green2min = bar2.position.x + gr2.position.x - (gr2.scale.x * 50)
 	var green2max = bar2.position.x + gr2.position.x + (gr2.scale.x * 50)
-	if event.is_action("Player 2"):
+	if event.is_action_pressed("Player 2"):
 		if needle2.position.x >= green2min and needle2.position.x <= green2max:
 			var tween = get_tree().create_tween()
 			tween.tween_property(gr2 , "scale" , Vector2(1.1 , 1.1) , .1)
 			player2 += 1
-			$"Line Canvas/P2 Score".text = player2
+			$"Line Canvas/P2 Score".text = str(player2)
 			tween.tween_property(gr2 , "scale", Vector2(1,1) , .1)
+			resetmark2()
 
 
 
@@ -68,7 +70,7 @@ func resetmark1():
 	elif x1 == 2:
 		d1 = -1
 	gr1.scale.x = randf_range(0.3 , 1.0)
-	gr1.position.x = randf_range(-width + 50 , -width - 50)
+	gr1.position.x = randf_range(-width + 50 , width - 50)
 
 
 func resetmark2():
@@ -78,7 +80,7 @@ func resetmark2():
 	elif x2 == 2:
 		d2 = -1
 	gr2.scale.x = randf_range(0.3 , 1.0)
-	gr2.position.x = randf_range(-width + 50 , -width -50)
+	gr2.position.x = randf_range(-width + 50 , width -50)
 
 
 func resetm1m2():

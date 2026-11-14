@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bhj7aw0a1kovx"]
+
+[ext_resource type="Script" uid="uid://0f22ggmvu81j" path="res://scripts/instructions.gd" id="1_c00ax"]
+[ext_resource type="Texture2D" uid="uid://ky8t730uvc8k" path="res://assets/Main Background.png" id="1_nisbi"]
+[ext_resource type="Texture2D" uid="uid://dnd7y070blsvx" path="res://assets/Next.png" id="2_njqp3"]
+[ext_resource type="Texture2D" uid="uid://bcyss1beb0n38" path="res://assets/Previous.png" id="4_r7su1"]
+
+[node name="Instructions" type="Node2D" unique_id=1474851264]
+script = ExtResource("1_c00ax")
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=1558049557]
+
+[node name="MainBackground" type="Sprite2D" parent="Canvas" unique_id=875821936]
+position = Vector2(640, 360)
+texture = ExtResource("1_nisbi")
+
+[node name="Next" type="TextureButton" parent="Canvas" unique_id=573848111]
+offset_left = 1155.0
+offset_top = 595.0
+offset_right = 1275.0
+offset_bottom = 715.0
+texture_normal = ExtResource("2_njqp3")
+stretch_mode = 0
+
+[node name="Previous" type="TextureButton" parent="Canvas" unique_id=157045295]
+offset_left = 5.0
+offset_top = 595.0
+offset_right = 125.0
+offset_bottom = 715.0
+texture_normal = ExtResource("4_r7su1")
+stretch_mode = 0
