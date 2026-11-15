@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://ky8t730uvc8k" path="res://assets/Main Background.png" id="1_nisbi"]
 [ext_resource type="Texture2D" uid="uid://dnd7y070blsvx" path="res://assets/Next.png" id="2_njqp3"]
 [ext_resource type="Texture2D" uid="uid://bcyss1beb0n38" path="res://assets/Previous.png" id="4_r7su1"]
+[ext_resource type="FontFile" uid="uid://dhj36d4fxcvbv" path="res://assets/fonts/Quantico-Bold.ttf" id="5_r7su1"]
+[ext_resource type="Texture2D" uid="uid://xqnjdhuua8ck" path="res://assets/Time Holder.png" id="6_2n4j6"]
+[ext_resource type="Texture2D" uid="uid://baostvbv7foh6" path="res://assets/Line Holder.png" id="7_olnwl"]
+[ext_resource type="Texture2D" uid="uid://c4i3chyqpcfnn" path="res://assets/Quick Holder.png" id="8_i5xgr"]
 
 [node name="Instructions" type="Node2D" unique_id=1474851264]
 script = ExtResource("1_c00ax")
@@ -29,3 +33,46 @@ offset_right = 125.0
 offset_bottom = 715.0
 texture_normal = ExtResource("4_r7su1")
 stretch_mode = 0
+
+[node name="Info" type="RichTextLabel" parent="Canvas" unique_id=1181825701]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -20.0
+offset_right = 1258.0
+offset_bottom = 223.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "This is the instructions page which will explain the games in detail
+To go to the next page click on the next arrow
+To go back a page or to the game click the previous arrow"
+
+[node name="Header" type="RichTextLabel" parent="Canvas" unique_id=506669053]
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 1249.0
+offset_bottom = 145.0
+theme_override_fonts/normal_font = ExtResource("5_r7su1")
+theme_override_font_sizes/normal_font_size = 64
+text = "INSTRUCTIONS"
+
+[node name="TimeHolder" type="Sprite2D" parent="Canvas" unique_id=1081875537]
+position = Vector2(144, 210)
+scale = Vector2(2.734375, 2.734375)
+texture = ExtResource("6_2n4j6")
+
+[node name="NeedleHolder" type="Sprite2D" parent="Canvas" unique_id=1199208628]
+position = Vector2(144, 210)
+scale = Vector2(2.734375, 2.734375)
+texture = ExtResource("7_olnwl")
+
+[node name="QuickHolder" type="Sprite2D" parent="Canvas" unique_id=1311104372]
+position = Vector2(144, 210)
+scale = Vector2(2.734375, 2.734375)
+texture = ExtResource("8_i5xgr")
+
+[connection signal="button_down" from="Canvas/Next" to="." method="_on_next_button_down"]
+[connection signal="button_up" from="Canvas/Next" to="." method="_on_next_button_up"]
+[connection signal="button_down" from="Canvas/Previous" to="." method="_on_previous_button_down"]
+[connection signal="button_up" from="Canvas/Previous" to="." method="_on_previous_button_up"]

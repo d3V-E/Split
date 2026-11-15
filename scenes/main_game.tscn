@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dhj36d4fxcvbv" path="res://assets/fonts/Quantico-Bold.ttf" id="3_ipu61"]
 [ext_resource type="Texture2D" uid="uid://cimyqu4u3cutw" path="res://assets/S Key.png" id="4_ygxny"]
 [ext_resource type="Texture2D" uid="uid://bmdq2gr8hbaaj" path="res://assets/K Key.png" id="5_wi4c7"]
-[ext_resource type="Texture2D" uid="uid://deuiaywymgebl" path="res://assets/Place Holder.png" id="6_ygxny"]
+[ext_resource type="Texture2D" uid="uid://xqnjdhuua8ck" path="res://assets/Time Holder.png" id="7_70vka"]
 [ext_resource type="Texture2D" uid="uid://b4ysntwnmocwh" path="res://assets/2.png" id="8_70vka"]
 
 [sub_resource type="Animation" id="Animation_70vka"]
@@ -131,7 +131,7 @@ offset_left = 54.0
 offset_top = 54.0
 offset_right = 234.0
 offset_bottom = 234.0
-texture_normal = ExtResource("6_ygxny")
+texture_normal = ExtResource("7_70vka")
 stretch_mode = 0
 
 [node name="Instructions" type="TextureButton" parent="Main Game Canvas" unique_id=521959474]
