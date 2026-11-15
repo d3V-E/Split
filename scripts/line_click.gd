@@ -60,7 +60,11 @@ func _input(event: InputEvent):
 			$"Line Canvas/P2 Score".text = str(player2)
 			tween.tween_property(gr2 , "scale", Vector2(1,1) , .1)
 			resetmark2()
-
+	
+	if player1 >= 5:
+		get_tree().change_scene_to_file("res://scenes/main_game.tscn")
+	if player2 >= 5:
+		get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 
 
 func resetmark1():

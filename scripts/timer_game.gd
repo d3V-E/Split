@@ -73,7 +73,7 @@ func _on_timer_check_timeout():
 		elif p1diff > p2diff:
 			$"Timer Game Canvas/Player1/Player1 Text".add_theme_color_override("font_outline_color" , Color.RED)
 			$"Timer Game Canvas/Player2/Player2 Text".add_theme_color_override("font_outline_color" , Color.GREEN)
-
+		get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 
 
 func _input(event: InputEvent):

@@ -32,8 +32,10 @@ func _input(event: InputEvent):
 		fired = true
 		bullet2.visible = false
 		anim.play("P1")
+		get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 	if event.is_action_pressed("Player 2") and fired == false and drawallow == true:
 		bullet2.visible = true
 		fired = true
 		bullet1.visible = false
 		anim.play("P2")
+		get_tree().change_scene_to_file("res://scenes/main_game.tscn")
