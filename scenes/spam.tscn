@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cekkiqkt1b1m1"]
+
+[ext_resource type="Script" uid="uid://b36ytqpfsxqoe" path="res://scripts/spam.gd" id="1_fl7lg"]
+[ext_resource type="Texture2D" uid="uid://ky8t730uvc8k" path="res://assets/Main Background.png" id="2_76728"]
+
+[node name="Spam" type="Node2D" unique_id=241948130]
+script = ExtResource("1_fl7lg")
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=2082806276]
+
+[node name="MainBackground" type="Sprite2D" parent="Canvas" unique_id=1594338785]
+position = Vector2(640, 360)
+texture = ExtResource("2_76728")
+
+[node name="Timer" type="Timer" parent="Canvas" unique_id=672422587]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="timeout" from="Canvas/Timer" to="." method="_on_timer_timeout"]

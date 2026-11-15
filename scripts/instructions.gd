@@ -79,6 +79,7 @@ func s1():
 	$Canvas/Info.text = "This is the instructions page which will explain the games in detail
 To go to the next page click on the next arrow
 To go back a page or to the game click the previous arrow
+After winning a game wait 3 seconds for it to redirect you back to the main page
 
 Controls
 Player 1 = S 

@@ -538,3 +538,21 @@ vertical_alignment = 1
 [node name="Anim" type="AnimationPlayer" parent="Canvas" unique_id=1302233658]
 root_node = NodePath("../Player 1 charecter")
 libraries/ = SubResource("AnimationLibrary_jlash")
+
+[node name="Winner" type="RichTextLabel" parent="Canvas" unique_id=2099264544]
+z_index = 6
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.5
+offset_top = -100.0
+offset_right = 204.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 40
+text = "PLAYER X WINS"
+horizontal_alignment = 1
+vertical_alignment = 1

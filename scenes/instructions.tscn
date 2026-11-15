@@ -39,14 +39,19 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 23.0
-offset_top = -20.0
+offset_top = -51.0
 offset_right = 1258.0
-offset_bottom = 223.0
+offset_bottom = 231.0
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 24
 text = "This is the instructions page which will explain the games in detail
 To go to the next page click on the next arrow
-To go back a page or to the game click the previous arrow"
+To go back a page or to the game click the previous arrow
+After winning a game wait 3 seconds for it to redirect you back to the main page
+
+Controls
+Player 1 = S 
+Player 2 = K"
 
 [node name="Header" type="RichTextLabel" parent="Canvas" unique_id=506669053]
 offset_left = 14.0

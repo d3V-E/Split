@@ -6,7 +6,7 @@ extends Node2D
 @onready var timerunit = $"Timer Game Canvas/Timer"
 @onready var countdowntag = $"Timer Game Canvas/Background/Countdown"
 @onready var finisher = $"Timer Game Canvas/Finish Animation"
-
+@onready var header = $"Timer Game Canvas/Winner"
 
 var timestop = 0
 var timestopper = 0
@@ -19,6 +19,7 @@ var dropped = false
 
 
 func _ready():
+	header.visible = false
 	finisher.play_backwards("Finish")
 	timerunit.visible = false
 	countdowntag.visible = true
@@ -70,9 +71,13 @@ func _on_timer_check_timeout():
 		if p1diff < p2diff:
 			$"Timer Game Canvas/Player1/Player1 Text".add_theme_color_override("font_outline_color" , Color.GREEN)
 			$"Timer Game Canvas/Player2/Player2 Text".add_theme_color_override("font_outline_color" , Color.RED)
+			$"Timer Game Canvas/Winner".text = "PLAYER 1 WINS"
 		elif p1diff > p2diff:
 			$"Timer Game Canvas/Player1/Player1 Text".add_theme_color_override("font_outline_color" , Color.RED)
 			$"Timer Game Canvas/Player2/Player2 Text".add_theme_color_override("font_outline_color" , Color.GREEN)
+			$"Timer Game Canvas/Winner".text = "PLAYER 2 WINS"
+		header.visible = true
+		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 
 

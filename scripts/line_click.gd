@@ -10,7 +10,7 @@ extends Node2D
 @onready var gr2 = $"Line Canvas/Player 2/GreenIndicator2"
 @onready var needle2 = $"Line Canvas/P2 Line"
 
-
+@onready var header = $"Line Canvas/Winner"
 
 var player1 = 0
 var player2 = 0
@@ -20,6 +20,7 @@ var d2 = 2
 var width = 200
 
 func _ready():
+	header.visible = false
 	$"Line Canvas/P1 Score".text = str(player1)
 	$"Line Canvas/P2 Score".text = str(player2)
 	resetm1m2()
@@ -62,8 +63,14 @@ func _input(event: InputEvent):
 			resetmark2()
 	
 	if player1 >= 5:
+		$"Line Canvas/Winner".text = "PLAYER 1 WINS"
+		header.visible = true
+		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 	if player2 >= 5:
+		$"Line Canvas/Winner".text = "PLAYER 2 WINS"
+		header.visible = true
+		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 
 

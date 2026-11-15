@@ -205,4 +205,21 @@ vertical_alignment = 1
 [node name="Finish Animation" type="AnimationPlayer" parent="Timer Game Canvas" unique_id=2133369204]
 libraries/ = SubResource("AnimationLibrary_366lb")
 
+[node name="Winner" type="RichTextLabel" parent="Timer Game Canvas" unique_id=1223943355]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -136.00537
+offset_right = 225.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 40
+text = "PLAYER X WINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="Timer Game Canvas/Timer/Timer Check" to="." method="_on_timer_check_timeout"]
