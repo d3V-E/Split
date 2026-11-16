@@ -8,6 +8,8 @@ extends Node2D
 @onready var p1add = $"Main Game Canvas/p1+"
 @onready var p2add = $"Main Game Canvas/p2+"
 @onready var reset : TextureButton = $"Main Game Canvas/Reset"
+@onready var game4 = $"Main Game Canvas/Game 4"
+
 
 const save_path = "user://userdata.save"
 
@@ -51,6 +53,7 @@ func _ready():
 	p1add.pivot_offset = p1add.size / 2
 	p2add.pivot_offset = p2add.size / 2
 	reset.pivot_offset = reset.size / 2
+	game4.pivot_offset = game4.size / 2
 	$"Main Game Canvas/p1score".text = str(p1)
 	$"Main Game Canvas/p2score".text = str(p2)
 
@@ -198,3 +201,22 @@ func _on_reset_button_up():
 	save_data()
 	$"Main Game Canvas/p1score".text = str(p1)
 	$"Main Game Canvas/p2score".text = str(p2)
+
+
+
+
+
+
+
+func _on_game_4_button_down():
+	var tween = get_tree().create_tween()
+	tween.tween_property(game4 , "scale" , Vector2(.9 ,.9), .1)
+
+
+
+
+
+func _on_game_4_button_up():
+	var tween = get_tree().create_tween()
+	tween.tween_property(game4 , "scale" , Vector2(1 ,1) ,.1)
+	get_tree().change_scene_to_file("res://scenes/spam.tscn")

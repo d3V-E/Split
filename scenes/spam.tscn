@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b36ytqpfsxqoe" path="res://scripts/spam.gd" id="1_fl7lg"]
 [ext_resource type="Texture2D" uid="uid://ky8t730uvc8k" path="res://assets/Main Background.png" id="2_76728"]
+[ext_resource type="Texture2D" uid="uid://bndm8bq23k27b" path="res://assets/Spam.png" id="3_76728"]
+[ext_resource type="FontFile" uid="uid://wxgmfu2y2ds6" path="res://assets/fonts/Geo-Regular.ttf" id="4_cgqlm"]
 
 [node name="Spam" type="Node2D" unique_id=241948130]
 script = ExtResource("1_fl7lg")
@@ -15,5 +17,67 @@ texture = ExtResource("2_76728")
 [node name="Timer" type="Timer" parent="Canvas" unique_id=672422587]
 wait_time = 60.0
 one_shot = true
+
+[node name="Player 1" type="Sprite2D" parent="Canvas" unique_id=1110364848]
+position = Vector2(300, 350.00003)
+scale = Vector2(3.8125, 3.8125)
+texture = ExtResource("3_76728")
+
+[node name="Player 2" type="Sprite2D" parent="Canvas" unique_id=679945013]
+position = Vector2(984, 350.00003)
+scale = Vector2(3.8125, 3.8125)
+texture = ExtResource("3_76728")
+
+[node name="Counter" type="RichTextLabel" parent="Canvas" unique_id=2141859546]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -251.5
+offset_right = 251.5
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 52
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Winner" type="RichTextLabel" parent="Canvas" unique_id=159891746]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -214.0
+offset_top = -91.0
+offset_right = 214.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 40
+text = "PLAYER X WINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player score 1" type="RichTextLabel" parent="Canvas" unique_id=76246974]
+offset_left = 214.0
+offset_top = 485.0
+offset_right = 393.0
+offset_bottom = 573.0
+theme_override_fonts/normal_font = ExtResource("4_cgqlm")
+theme_override_font_sizes/normal_font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player score 2" type="RichTextLabel" parent="Canvas" unique_id=1349025434]
+offset_left = 899.0
+offset_top = 485.0
+offset_right = 1078.0
+offset_bottom = 573.0
+theme_override_fonts/normal_font = ExtResource("4_cgqlm")
+theme_override_font_sizes/normal_font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Canvas/Timer" to="." method="_on_timer_timeout"]

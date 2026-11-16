@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://don62i0ya8k1l" path="res://assets/plus.png" id="11_o6v7o"]
 [ext_resource type="FontFile" uid="uid://wxgmfu2y2ds6" path="res://assets/fonts/Geo-Regular.ttf" id="12_wjob3"]
 [ext_resource type="Texture2D" uid="uid://do0cakegd3bxb" path="res://assets/play.png" id="13_wjob3"]
+[ext_resource type="Texture2D" uid="uid://0v8rcmyxcsc5" path="res://assets/Spam holder.png" id="14_8xp80"]
 
 [sub_resource type="Animation" id="Animation_70vka"]
 resource_name = "Key"
@@ -230,6 +231,14 @@ theme_override_font_sizes/normal_font_size = 28
 text = "RESET"
 vertical_alignment = 1
 
+[node name="Game 4" type="TextureButton" parent="Main Game Canvas" unique_id=113778247]
+offset_left = 302.0
+offset_top = 294.0
+offset_right = 482.0
+offset_bottom = 474.0
+texture_normal = ExtResource("14_8xp80")
+stretch_mode = 0
+
 [connection signal="button_down" from="Main Game Canvas/Game 1" to="." method="_on_game_1_button_down"]
 [connection signal="button_up" from="Main Game Canvas/Game 1" to="." method="_on_game_1_button_up"]
 [connection signal="button_down" from="Main Game Canvas/Instructions" to="." method="_on_instructions_button_down"]
@@ -244,3 +253,5 @@ vertical_alignment = 1
 [connection signal="button_up" from="Main Game Canvas/p2+" to="." method="_on_p_2_button_up"]
 [connection signal="button_down" from="Main Game Canvas/Reset" to="." method="_on_reset_button_down"]
 [connection signal="button_up" from="Main Game Canvas/Reset" to="." method="_on_reset_button_up"]
+[connection signal="button_down" from="Main Game Canvas/Game 4" to="." method="_on_game_4_button_down"]
+[connection signal="button_up" from="Main Game Canvas/Game 4" to="." method="_on_game_4_button_up"]
